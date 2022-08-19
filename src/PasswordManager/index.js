@@ -48,11 +48,15 @@ class PasswordManager extends Component {
     event.preventDefault()
     const {website, username, password} = this.state
 
+    const colorList = ['red', 'green', 'orange', 'brown', 'skyblue']
+    const colorClass = colorList[Math.floor(Math.random() * 5)]
+
     const newPassword = {
       id: uuidv4(),
       website,
       username,
       password,
+      colorClass,
     }
 
     this.setState(prevState => ({

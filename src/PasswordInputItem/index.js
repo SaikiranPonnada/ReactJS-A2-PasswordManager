@@ -2,7 +2,7 @@ import './index.css'
 
 const PasswordInputItem = props => {
   const {passwordDetails, isChecked, onDeletePassword} = props
-  const {id, website, username, password} = passwordDetails
+  const {id, website, username, password, colorClass} = passwordDetails
 
   const passwordItem = isChecked ? (
     <p className="text">{password}</p>
@@ -15,10 +15,6 @@ const PasswordInputItem = props => {
   )
 
   const initial = website[0].toUpperCase()
-
-  const colorList = ['red', 'green', 'orange', 'brown', 'skyblue']
-
-  const colorClass = colorList[Math.floor(Math.random() * 5)]
 
   const onClickDelete = () => {
     onDeletePassword(id)
